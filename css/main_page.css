@@ -1,0 +1,37 @@
+.article {
+    border-style:groove;
+    border-width: 1px;
+    margin-bottom: 10px;
+}
+
+.article-list {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.article {
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.article-intro {
+    height: 42px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.article-link {
+    color: blue;
+}
+
+.article-date {
+    color: gray;
+}
