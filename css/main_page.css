@@ -1,15 +1,12 @@
-.article {
-    border-style:groove;
-    border-width: 1px;
-    margin-bottom: 10px;
-}
-
-.article-list {
+.article-item-list {
     margin-left: 20%;
     margin-right: 20%;
 }
 
-.article {
+.article-item {
+    border-style:groove;
+    border-width: 1px;
+    margin-bottom: 10px;
     height: 140px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -17,21 +14,116 @@
     padding-right: 10px;
 }
 
-.article-title {
+.article-item-title {
     font-size: 24px;
     font-weight: bold;
 }
 
-.article-intro {
+.article-item-intro {
     height: 42px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.article-link {
+.article-item-link {
     color: blue;
+}
+
+.article-item-date {
+    color: gray;
+}
+
+.article {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 100px;
+}
+
+.article-title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.article-sub-title {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.article-author {
+    color: blue;
+    margin-right: 40px;
+    float: left;
 }
 
 .article-date {
     color: gray;
+    margin-left: 40px;
+    float: left;
 }
+
+.comment-page {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.comment-number {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.comment-number-text {
+    font-size: 24px;
+    font-weight: bold;
+    float: left;
+    margin-right: 5px;
+}
+
+.comment-number-number {
+    font-size: 24px;
+    color: gray;
+    float: left;
+    margin-left: 5px;
+}
+
+.comment {
+    height: 150px;
+    border-top: 1px solid gray;
+    padding-top: 20px;
+}
+
+.comment-visitor-info {
+    height: 20px;
+    display: inline-block;
+}
+
+.comment-visitor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid black;
+    margin-right: 10px;
+    float: left;
+}
+
+.comment-visitor-name {
+    margin-left: 10px;
+    float: left;
+}
+
+.comment-visitor-detail {
+    height: 50px;
+    margin-left: 74px;
+}
+
+.comment-date {
+    color: gray;
+    font-size: 12px;
+}
+
+.comment-body {
+    margin-top: 10px;
+}
+
+
