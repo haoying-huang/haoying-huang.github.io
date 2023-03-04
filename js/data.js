@@ -84,6 +84,7 @@ function comment_operation() {
         return;
     }
     // TODO: 提交评论
+    /*
     const Octokit = require('@octokit/rest');
    
     const octokit = new Octokit({
@@ -99,6 +100,7 @@ function comment_operation() {
             'X-GitHub-Api-Version': '2022-11-28'
         }
     })
+    */
 }
 
 function show_author_avatar() {
