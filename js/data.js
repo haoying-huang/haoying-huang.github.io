@@ -46,7 +46,7 @@ function get_article_by_page(page) {
         "body": response.body,
         "date": response.created_at,
         "author": response.user.login,
-        "author_url": response.user.url,
+        "author_url": response.user.html_url,
         "author_avatar_url": response.user.avatar_url,
         "comments_num": response.comments
     }
@@ -75,6 +75,30 @@ function get_article_comments(page) {
         comments.push(comment);
     }
     return comments;
+}
+
+function comment_operation() {
+    var comment_textarea_element = document.getElementsByClassName("comment-textarea")[0];
+    var comment_content = comment_textarea_element.value;
+    if (comment_content.length == 0) {
+        return;
+    }
+    // TODO: 提交评论
+    const Octokit = require('@octokit/rest');
+   
+    const octokit = new Octokit({
+        auth: 'YOUR-TOKEN'
+    })
+  
+    await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
+        owner: 'OWNER',
+        repo: 'REPO',
+        issue_number: 'ISSUE_NUMBER',
+        body: 'Me too',
+        headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+        }
+    })
 }
 
 function show_author_avatar() {
@@ -133,6 +157,7 @@ function show_article_list_page() {
         }
         article_title.style.fontSize = "24px";
         article_title.style.fontWeight = "bold";
+        article_title.href = "/articles/" + article_list[i].number + "/index.html";
     
         article_intro = document.createElement("div");
         article_intro.className = "article-item-intro";
@@ -227,6 +252,25 @@ function show_article_page(page) {
     comment_number_element.appendChild(number_element);
 
     comment_page_element.appendChild(comment_number_element);
+
+    var comment_public_element = document.createElement("div");
+    comment_public_element.className = "comment-public";
+
+    var comment_textarea_element = document.createElement("textarea");
+    comment_textarea_element.className = "comment-textarea";
+    comment_textarea_element.placeholder = "写下你的评论...";
+
+    var comment_public_button_element = document.createElement("div");
+    comment_public_button_element.className = "comment-public-button";
+    comment_public_button_element.innerText = "发表";
+    comment_public_button_element.onclick = function() {
+        comment_operation();
+    }
+
+    comment_public_element.appendChild(comment_textarea_element);
+    comment_public_element.appendChild(comment_public_button_element);
+
+    comment_page_element.appendChild(comment_public_element);
 
     var comment, comment_element, comment_visitor_avatar, comment_visitor_name, comment_date, comment_body;
     var comment_visitor_info_element, comment_visitor_detail_element;
